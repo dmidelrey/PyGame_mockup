@@ -44,7 +44,7 @@ all_sprites = pygame.sprite.Group()
 all_sprites.add(player, all_obs)
 
 # Настройка шрифта
-font = pygame.font.SysFont(None, 36)  # Выбор системного шрифта размером 36
+font = pygame.font.SysFont(None, 70)  # Выбор системного шрифта размером 36
 
 # Создание текстовой строки
 text = font.render(str(player.count), True, (0, 255, 255))  # Создаем текстовое изображение
