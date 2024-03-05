@@ -6,13 +6,14 @@ import pickle
 pygame.init()
 surface = pygame.display.set_mode((600, 400))
 pygame.display.set_caption("Моя Первая Игра")
-
+sound_effect = pygame.mixer.Sound('blipSelect.wav')
 def set_difficulty(value, difficulty):
     # Do the job here !
     pass
 
 def start_the_game():
     subprocess.Popen(["python", "main.py"])
+    sound_effect.play()
     pass
 
 def new_game():
@@ -26,6 +27,7 @@ def new_game():
     with open('data.pickle', 'wb') as f:
         pickle.dump(data, f)
     subprocess.Popen(["python", "main.py"])
+    sound_effect.play()
     pass
 
 menu = pygame_menu.Menu('Добро пожаловать', 400, 300,

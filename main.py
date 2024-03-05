@@ -13,6 +13,13 @@ pygame.display.set_caption("Моя Первая Игра")
 
 running = True
 
+background_music = pygame.mixer.music.load('background-music.mp3')
+sound_effect = pygame.mixer.Sound('blipSelect.wav')
+coin_effect = pygame.mixer.Sound('pickupCoin.wav')
+coin_effect.set_volume(1) 
+# Воспроизведение фоновой музыки (может быть только один трек воспроизведен одновременно)
+pygame.mixer.music.play(-1)  # -1 означает бесконечное воспроизведение
+
 player_images = ['sprites/sprite2.png']
 left_anim = ['sprites/sprite8.png', 'sprites/sprite9.png', 'sprites/sprite10.png', 'sprites/sprite11.png']
 up_anim = ['sprites/sprite4.png', 'sprites/sprite5.png', 'sprites/sprite6.png', 'sprites/sprite7.png']
@@ -73,6 +80,7 @@ while running:
             all_sprites.remove(obstacle)
             all_obs.remove(obstacle)
             player.count=player.count+1
+            coin_effect.play()
 
     if player.count == 2:
         player.count = 0
