@@ -58,3 +58,10 @@ class Player(pygame.sprite.Sprite):
 
         if not any(keys):
             self.orientation = 0
+
+class Coin(pygame.sprite.Sprite):
+    def __init__(self, x, y, size):
+        super().__init__()
+        self.image = pygame.Surface(size)
+        self.image.fill((255, 255, 0))  # Золотистый цвет монеты
+        self.rect = self.image.get_rect(topleft=(x, y))
